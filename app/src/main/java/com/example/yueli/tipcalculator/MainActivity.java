@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView totalView = (TextView) findViewById(R.id.total);
-        totalView.setText("Amount Entered: 0.00");
+        totalView.setText("Amount Entered: $0.00");
         TextView tipView = (TextView) findViewById(R.id.tipAmount);
-        tipView.setText("Tip: 0.00");
+        tipView.setText("Tip: $0.00");
     }
 
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) findViewById(b);
         s = button.getText().toString();
         total = total + s;
-        totalView.setText("Amount Entered: " + total);
+        totalView.setText("Amount Entered: $" + total);
         sum = Double.parseDouble(total);
     }
 
@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
             percent = 0.2;
         }
         double tipSum = tipTotal(sum, percent);
-        totalView.setText("Total Pay: " + total);
+        totalView.setText("Total Pay: $" + total);
         double tip = tipAmount(sum, percent);
         TextView tipView = (TextView) findViewById(R.id.tipAmount);
-        tipView.setText("Tip: " + tipString);
+        tipView.setText("Tip: $" + tipString);
 
     }
 
@@ -63,9 +63,9 @@ public class MainActivity extends AppCompatActivity {
         tipString = "";
         sum = 0.0;
         TextView totalView = (TextView) findViewById(R.id.total);
-        totalView.setText("Total Pay: 0.00");
+        totalView.setText("Total Pay: $0.00");
         TextView tipView = (TextView) findViewById(R.id.tipAmount);
-        tipView.setText("Tip: 0.00");
+        tipView.setText("Tip: $0.00");
     }
 
     public double tipTotal(double sum, double percent) {
